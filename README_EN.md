@@ -49,7 +49,7 @@ int __fastcall sub_401000(int a1, int a2)
 | Skill | Description |
 |-------|-------------|
 | `/reverse-engineering:rev-symbol` | Analyze function symbols from exports/imports or decompiled code |
-| `/rev-struct` | Reconstruct data structures from decompiled functions |
+| `/reverse-engineering:rev-struct` | Reconstruct data structures from decompiled functions |
 
 ## Installation
 
@@ -80,7 +80,7 @@ int __fastcall sub_401000(int a1, int a2)
 ### Reconstruct a Structure
 
 ```
-/rev-struct sub_401000
+/reverse-engineering:rev-struct sub_401000
 ```
 
 ## Directory Structure
