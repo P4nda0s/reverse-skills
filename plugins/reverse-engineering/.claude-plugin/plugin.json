@@ -1,9 +1,9 @@
 {
   "name": "reverse-engineering",
-  "description": "Reverse engineering toolkit with symbol analysis and structure extraction capabilities",
+  "description": "Reverse engineering toolkit for IDA-NO-MCP - analyze symbols and reconstruct structures from exported data",
   "version": "1.0.0",
   "author": {
-    "name": "chenyuxin"
+    "name": "pandaos"
   },
   "keywords": ["reverse-engineering", "binary", "symbol", "struct", "analysis", "ida", "ghidra"],
   "license": "MIT"

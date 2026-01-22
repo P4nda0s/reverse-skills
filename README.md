@@ -1,93 +1,71 @@
-# Reverse Engineering Skills for Claude Code
+[English](README_en.md) | 中文
 
-A Claude Code plugin marketplace providing reverse engineering skills.
+# 逆向工程技能集 (Reverse Engineering Skills)
 
-## Skills Included
+为 Claude Code 提供逆向工程分析技能的插件市场。
 
-| Skill | Description |
-|-------|-------------|
-| `/rev-symbol` | Analyze function symbols (mangled names, calling conventions, etc.) |
-| `/rev-struct` | Reconstruct data structures from decompiled code |
+**专为 [IDA-NO-MCP](https://github.com/P4nda0s/IDA-NO-MCP) 设计** - 从 IDA 导出反编译结果，然后使用 Claude Code 进行分析。
 
-## Installation
+## 工作流程
 
-### Add the Marketplace
+1. **从 IDA 导出** - 使用 [IDA-NO-MCP](https://github.com/P4nda0s/IDA-NO-MCP) 插件 (`Ctrl-Shift-E`)
+2. **打开导出目录** - 使用 Claude Code 打开
+3. **使用技能分析** - 分析符号和数据结构
 
-```bash
-# From GitHub (after publishing)
-/plugin marketplace add username/reverse-skills
+### 导出目录结构 (由 IDA-NO-MCP 生成)
 
-# From local path (for development)
-/plugin marketplace add /path/to/reverse-skills
+```
+export_dir/
+├── decompile/              # 反编译的 C 代码
+│   ├── 0x401000.c          # 每个函数一个文件，以十六进制地址命名
+│   ├── 0x401234.c
+│   └── ...
+├── decompile_failed.txt    # 反编译失败的函数列表
+├── decompile_skipped.txt   # 跳过的函数列表
+├── strings.txt             # 字符串表 (地址, 长度, 类型, 内容)
+├── imports.txt             # 导入表 (地址:函数名)
+├── exports.txt             # 导出表 (地址:函数名)
+└── memory/                 # 内存十六进制转储 (1MB 分块)
 ```
 
-### Install the Plugin
+
+## 包含的技能
+
+| 技能 | 描述 |
+|------|------|
+| `/rev-symbol` | 从导出表/导入表或反编译代码分析函数符号 |
+| `/rev-struct` | 从反编译函数重建数据结构 |
+
+## 安装
+
+### 添加插件市场
+
+```bash
+# 从 GitHub 添加
+/plugin marketplace add P4nda0s/reverse-skills
+```
+
+### 安装插件
 
 ```bash
 /plugin install reverse-engineering@reverse-engineering-skills
 ```
 
-## Usage
+## 使用方法
 
-### Analyze a Symbol
-
-```
-/rev-symbol _ZN5boost6system14error_categoryD2Ev
-```
-
-### Reconstruct a Structure
+### 分析符号
 
 ```
-/rev-struct
-
-<paste your decompiled code here>
+/rev-symbol sub_401000
 ```
 
-## Directory Structure
+### 重建数据结构
 
 ```
-reverse-skills/
-├── .claude-plugin/
-│   └── marketplace.json          # Marketplace catalog
-├── plugins/
-│   └── reverse-engineering/
-│       ├── .claude-plugin/
-│       │   └── plugin.json       # Plugin manifest
-│       └── skills/
-│           ├── rev-symbol/
-│           │   └── SKILL.md      # Symbol analysis skill
-│           └── rev-struct/
-│               └── SKILL.md      # Structure reconstruction skill
-└── README.md
+/rev-struct sub_401000
 ```
 
-## Development
 
-### Validate the Marketplace
-
-```bash
-claude plugin validate .
-```
-
-Or within Claude Code:
-
-```
-/plugin validate .
-```
-
-### Test Locally
-
-```bash
-/plugin marketplace add ./reverse-skills
-/plugin install reverse-engineering@reverse-engineering-skills
-```
-
-## Adding More Skills
-
-1. Create a new directory under `plugins/reverse-engineering/skills/`
-2. Add a `SKILL.md` file with the skill definition
-3. Update version in `plugin.json` if needed
-
-## License
+## 许可证
 
 MIT

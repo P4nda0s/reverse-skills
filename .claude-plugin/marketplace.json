@@ -1,11 +1,10 @@
 {
   "name": "reverse-engineering-skills",
   "owner": {
-    "name": "chenyuxin",
-    "email": "chenyuxin@example.com"
+    "name": "pandaos"
   },
   "metadata": {
-    "description": "Reverse engineering skills for Claude Code - analyze symbols, structures, and more",
+    "description": "Reverse engineering skills for Claude Code - works with IDA-NO-MCP exported data",
     "version": "1.0.0",
     "pluginRoot": "./plugins"
   },
@@ -13,12 +12,12 @@
     {
       "name": "reverse-engineering",
       "source": "./plugins/reverse-engineering",
-      "description": "Reverse engineering toolkit with symbol analysis and structure extraction",
+      "description": "Reverse engineering toolkit for IDA-NO-MCP - symbol analysis and structure reconstruction",
       "version": "1.0.0",
       "author": {
-        "name": "chenyuxin"
+        "name": "pandaos"
       },
-      "keywords": ["reverse-engineering", "binary", "symbol", "struct", "analysis"],
+      "keywords": ["reverse-engineering", "binary", "symbol", "struct", "analysis", "ida", "ida-no-mcp"],
       "category": "security"
     }
   ]
