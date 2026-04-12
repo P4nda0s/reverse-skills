@@ -14,6 +14,7 @@
 | `rev-struct` | 从反编译函数重建数据结构 |
 | `rev-frida` | 使用现代 Frida API 生成动态插桩脚本 |
 | `rev-unicorn-debug` | 使用 Unicorn 引擎模拟执行和调试指定代码片段 |
+| `rev-dex-dumper` | 从运行中的 Android 应用内存中 dump DEX 文件，用于整体加固脱壳 |
 
 ## 安装
 
