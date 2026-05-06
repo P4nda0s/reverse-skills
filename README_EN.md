@@ -17,6 +17,7 @@ Reverse engineering analysis skills, supporting 40+ AI coding agents.
 | `rev-dex-dumper` | Dump DEX files from a running Android app's memory for unpacking |
 | `rev-u3d-dump` | Extract C# symbols from Unity IL2CPP builds, generate IDA/Ghidra import scripts |
 | `rev-idapython` | IDAPython / IDALib script reference covering debugging, memory ops, decompiler API, obfuscation helpers, and batch analysis |
+| `rev-ios-dump` | Dump decrypted iOS app binaries from jailbroken devices using frida-ios-dump for security analysis |
 
 ## Installation
 

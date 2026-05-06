@@ -17,6 +17,7 @@
 | `rev-dex-dumper` | 从运行中的 Android 应用内存中 dump DEX 文件，用于整体加固脱壳 |
 | `rev-u3d-dump` | 从 Unity IL2CPP 构建中提取 C# 符号地址，生成 IDA/Ghidra 导入脚本 |
 | `rev-idapython` | IDAPython / IDALib 脚本参考，涵盖调试、内存操作、反编译、混淆辅助、批量分析等 |
+| `rev-ios-dump` | 使用 frida-ios-dump 对越狱设备上的 iOS 应用进行砸壳，导出解密后的 IPA 用于安全分析 |
 
 ## 安装
 
